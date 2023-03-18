@@ -47,6 +47,17 @@ class ConversationService {
         }
 
     }
+
+    static async delete(id){
+        try {
+            const deleteConversation = await Conversation.destroy({
+                where:{id}
+            })
+             return(deleteConversation)
+        } catch (error) {
+            throw(error)
+        }
+    }
 }
 
 module.exports = ConversationService
